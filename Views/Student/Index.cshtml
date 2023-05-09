@@ -1,0 +1,31 @@
+﻿@using SchoolWebsite.Models;
+@model List<Student>
+
+@{
+    Layout = "_Layout";
+}
+
+<h1 class="text-center mt-5">Students</h1>
+<div class="container">
+    <div class="row d-flex justify-content-between">
+        @foreach (Student student in Model)
+        {
+            <div class="card mt-5" style="width: 18rem;">
+                <img class="card-img-top" src="@student.Image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        @student.Name
+                        @student.Surname
+                    </h5>
+                    @{
+                        <p class="card-text">
+                            Group: @student.GroupName <br>
+                            Point: @student.Point
+                        </p>
+                    }
+                    <a href="#" class="btn btn-primary">Learn about</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
