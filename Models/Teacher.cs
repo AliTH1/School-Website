@@ -6,5 +6,6 @@
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Subject { get; set; }
+        public string Image { get; set; }
     }
 }

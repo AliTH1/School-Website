@@ -1,3 +1,29 @@
-﻿@{
+﻿@using SchoolWebsite.Models;
+@{
     Layout = "_Layout";
 }
+@model List<Teacher>
+
+<h1 class = "text-center mt-3">Teachers</h1>
+<div class="container">
+    <div class="row d-flex justify-content-between">
+        @foreach (Teacher teacher in Model)
+        {
+            <div class="card mt-5" style="width: 18rem;">
+                <img class="card-img-top" src="@teacher.Image" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title text-center">
+                        @teacher.Name
+                        @teacher.Surname
+                    </h5>
+                    @{
+                        <p class="card-text">
+                            Subject: @teacher.Subject<br>
+                        </p>
+                    }
+                    <a href="#" class="btn btn-primary">See profile</a>
+                </div>
+            </div>
+        }
+    </div>
+</div>

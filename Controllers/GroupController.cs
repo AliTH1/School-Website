@@ -18,7 +18,7 @@ namespace SchoolWebsite.Controllers
             {
                 Id = 2,
                 GroupName = "AP208",
-                Description = "The AP 208 group is a preparation group before the start of the main classes."
+                Description = "The AP208 group is a preparation group before the start of the main classes."
             },
 
             new Group()
