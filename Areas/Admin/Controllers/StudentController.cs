@@ -24,12 +24,14 @@ namespace SchoolWebsite.Areas.Admin.Controllers
             return View(students);
         }
 
+        [Area("Admin")]
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Area("Admin")]
         [HttpPost]
         public async Task<IActionResult> Create(string name)
         {

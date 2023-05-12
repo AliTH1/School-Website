@@ -1,7 +1,4 @@
 ﻿@using SchoolWebsite.Models;
-@{
-    Layout = "_Layout";
-}
 @model ICollection<Student>
 
 
@@ -29,5 +26,5 @@
 </table>
 
 <div class="button-create d-flex justify-content-end">
-    <a class="btn btn-success btn-lg text-light mt-3" asp-area="Admin" asp-controller="Student" asp-action="Create">Add student</a>
+    <a class="btn btn-success btn-lg text-light mt-3" href="@Url.Action("Create", "Student")">Add student</a>
 </div>
