@@ -9,7 +9,8 @@ namespace SchoolWebsite.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public double Point { get; set; }
-        public string GroupName { get; set; }
+        public int GroupId { get; set; }
+        public Group Groups { get; set; }
         public string Image { get; set; }
         //public int GroupId { get; set; }
 

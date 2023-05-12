@@ -1,5 +1,5 @@
 ﻿@using SchoolWebsite.Models;
-@model List<Student>
+@model ICollection<Student>
 
 @{
     Layout = "_Layout";
@@ -19,7 +19,7 @@
                     </h5>
                     @{
                         <p class="card-text">
-                            Group: @student.GroupName <br>
+                            Group: @student.Groups.GroupName <br>
                             Point: @student.Point
                         </p>
                     }

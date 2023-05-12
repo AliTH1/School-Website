@@ -1,0 +1,33 @@
+﻿@using SchoolWebsite.Models;
+@{
+    Layout = "_Layout";
+}
+@model ICollection<Student>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Group</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (Student student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Surname</td>
+                <td>@student.Groups.GroupName</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div class="button-create d-flex justify-content-end">
+    <a class="btn btn-success btn-lg text-light mt-3" asp-area="Admin" asp-controller="Student" asp-action="Create">Add student</a>
+</div>

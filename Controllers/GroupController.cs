@@ -1,35 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using SchoolWebsite.DAL;
 using SchoolWebsite.Models;
 
 namespace SchoolWebsite.Controllers
 {
     public class GroupController : Controller
     {
-        public List<Group> groups = new List<Group>()
+        private readonly AppDbContext _appDbContext;
+        public GroupController(AppDbContext appDbContext)
         {
-            new Group()
-            {
-                Id = 1,
-                GroupName = "AB201",
-                Description = "Group AB201 is learning C# programming"
-            },
-
-            new Group()
-            {
-                Id = 2,
-                GroupName = "AP208",
-                Description = "The AP208 group is a preparation group before the start of the main classes."
-            },
-
-            new Group()
-            {
-                Id = 3,
-                GroupName = "BB205",
-                Description = "This group is learning Full Stack programming. The basics of the network are also studied"
-            }
-        };
-        public IActionResult Index()
+            _appDbContext = appDbContext;
+        }
+        public async Task<IActionResult> Index()
         {
+            List<Group> groups = await _appDbContext.Groups.ToListAsync();
             return View(groups);
         }
     }
